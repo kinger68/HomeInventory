@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class GroceryController {
 
     @RequestMapping
+    public String mainMenu() {
+        return "Welcome to our family";
+    }
+
+    @RequestMapping("/inStock")
     public String getInStockGroceries() {
         return "Nothing in stock";
     }

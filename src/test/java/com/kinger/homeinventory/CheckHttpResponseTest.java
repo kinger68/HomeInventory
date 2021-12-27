@@ -17,7 +17,12 @@ public class CheckHttpResponseTest {
     private TestRestTemplate testRestTemplate;
 
     @Test
-    public void shouldPassIfStringMatches() {
-        assertEquals("Nothing in stock", testRestTemplate.getForObject("http://localhost:" + port + "/", String.class));
+    public void shouldPassOpeningScreen() {
+        assertEquals("Welcome to our family", testRestTemplate.getForObject("http://localhost:" + port + "/inStock", String.class));
+    }
+
+    @Test
+    public void shouldPassIfNothingInStock() {
+        assertEquals("Nothing in stock", testRestTemplate.getForObject("http://localhost:" + port + "/inStock", String.class));
     }
 }
